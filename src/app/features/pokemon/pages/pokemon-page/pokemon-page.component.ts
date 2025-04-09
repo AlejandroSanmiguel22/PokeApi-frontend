@@ -21,18 +21,27 @@ import { NavigationComponent } from '../../components/navigation/navigation.comp
 export class PokemonPageComponent {
   pokemonData?: Pokemon;
   error: string = '';
+  isLoading = false;
 
   constructor(private pokemonService: PokemonService) {}
 
   handleSearch(value: string) {
     this.pokemonData = undefined;
     this.error = '';
-
+    this.isLoading = true;
+  
     this.pokemonService.getPokemonById(value).subscribe({
-      next: (data) => this.pokemonData = data,
-      error: () => this.error = 'No se encontró el Pokémon'
+      next: (data) => {
+        this.pokemonData = data;
+        this.isLoading = false;
+      },
+      error: () => {
+        this.error = 'No se encontró el Pokémon 😢';
+        this.isLoading = false;
+      }
     });
   }
+  
 
   handleNavigation(id: number) {
     this.handleSearch(id.toString());

@@ -7,7 +7,7 @@ import { Pokemon } from 'src/app/shared/models/pokemon.model';
   providedIn: 'root',
 })
 export class PokemonService {
-  private readonly API_URL = 'https://pokeapi-backend-8uiq.onrender.com/pokemon/'; 
+  private readonly API_URL = 'https://pokeapi-backend-8uiq.onrender.com/pokemon'; 
 
   constructor(private http: HttpClient) {}
 
