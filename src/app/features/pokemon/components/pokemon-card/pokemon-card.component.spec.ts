@@ -14,6 +14,14 @@ describe('PokemonCardComponent', () => {
 
     fixture = TestBed.createComponent(PokemonCardComponent);
     component = fixture.componentInstance;
+    component.pokemon = {
+      id: 25,
+      name: 'pikachu',
+      types: ['electric'],
+      abilities: ['static'],
+      sprite_url: 'https://example.com/pikachu.png'
+    };
+    
     fixture.detectChanges();
   });
 
