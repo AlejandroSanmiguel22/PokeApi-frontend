@@ -8,7 +8,7 @@ describe('PokemonPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PokemonPageComponent, HttpClientTestingModule] // 👈 esto funciona
+      imports: [PokemonPageComponent, HttpClientTestingModule]
     }).compileComponents();
 
     fixture = TestBed.createComponent(PokemonPageComponent);
