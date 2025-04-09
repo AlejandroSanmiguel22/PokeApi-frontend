@@ -1,0 +1,10 @@
+<div class="card">
+    <h2>#{{ pokemon.id }} - {{ pokemon.name | titlecase }}</h2>
+    <img [src]="pokemon.sprite_url" [alt]="pokemon.name" />
+  
+    <div class="info">
+      <p><strong>Tipos:</strong> {{ pokemon.types.join(', ') }}</p>
+      <p><strong>Habilidades:</strong> {{ pokemon.abilities.join(', ') }}</p>
+    </div>
+  </div>
+  

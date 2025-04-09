@@ -1,0 +1,30 @@
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 1rem;
+    color: #374151;
+  }
+
+  img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+  }
+
+  .info {
+    text-align: left;
+    font-size: 16px;
+
+    p {
+      margin: 0.5rem 0;
+    }
+  }
+}

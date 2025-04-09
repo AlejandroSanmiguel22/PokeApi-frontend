@@ -1,0 +1,22 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .error {
+    color: #e63946;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+.footer {
+  margin-top: 40px;
+  font-size: 14px;
+  color: #6b7280;
+}
+.loading {
+  margin: 10px 0;
+  color: #3b82f6;
+  font-weight: 500;
+}
