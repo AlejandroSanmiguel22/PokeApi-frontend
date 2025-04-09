@@ -1,0 +1,11 @@
+<app-pokemon-search (search)="handleSearch($event)"></app-pokemon-search>
+
+<div *ngIf="error" class="error">{{ error }}</div>
+
+<app-pokemon-card *ngIf="pokemonData" [pokemon]="pokemonData"></app-pokemon-card>
+
+<app-navigation
+  *ngIf="pokemonData"
+  [currentId]="pokemonData.id"
+  (navigate)="handleNavigation($event)">
+</app-navigation>

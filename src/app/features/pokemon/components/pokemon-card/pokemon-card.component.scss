@@ -1,0 +1,21 @@
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #f8f8f8;
+  
+    img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+    }
+  
+    .info {
+      margin-top: 1rem;
+      text-align: left;
+    }
+}
+  
