@@ -1,59 +1,80 @@
-# PokemonApp
+# Pokémon App – Frontend Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.6.
+Aplicación web desarrollada con Angular 19 como parte de la prueba técnica Full Stack para la Universidad CUN. Esta aplicación permite buscar y visualizar información de Pokémon mediante una interfaz amigable y moderna.
 
-## Development server
+---
 
-To start a local development server, run:
+## 📐 Arquitectura del proyecto
 
-```bash
-ng serve
+La arquitectura sigue una **estructura modular y escalable** basada en:
+
+```
+src/
+├── app/
+│   ├── core/      → Servicios globales y configuración principal
+│   ├── shared/    → Interfaces, componentes reutilizables, modelos
+│   ├── features/  → Módulos específicos por funcionalidad (ej. pokemon)
+│   │   └── pokemon/
+│   │       ├── components/
+│   │       └── pages/
+│   └── app.config.ts → Configuración de rutas con standalone
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### 🚀 ¿Por qué esta arquitectura?
 
-## Code scaffolding
+- ✅ **Escalabilidad**: facilita añadir nuevas funcionalidades sin afectar otras.
+- ✅ **Reutilización**: componentes y servicios compartidos en `shared/`.
+- ✅ **Claridad**: cada carpeta tiene un propósito definido.
+- ✅ **Angular Standalone**: se usó el nuevo enfoque sin módulos raíz para aprovechar las últimas mejoras del framework.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
+
+## 🧩 Componentes clave
+
+- `PokemonSearchComponent`: campo de búsqueda.
+- `PokemonCardComponent`: muestra la tarjeta del Pokémon.
+- `NavigationComponent`: botones para navegar entre Pokémon.
+- `PokemonPageComponent`: página principal que orquesta los anteriores.
+
+---
+
+## 📦 Construcción y despliegue
+
+### Producción
 
 ```bash
-ng generate component component-name
+npm install
+npm run build --prod
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Esto generará los archivos en `dist/pokemon-app/browser/`.
 
-```bash
-ng generate --help
-```
+### Docker
 
-## Building
+La app puede ejecutarse en modo producción con Docker y NGINX. Ver Dockerfile.
 
-To build the project run:
+## 📄 Pruebas
 
-```bash
-ng build
-```
+Se implementaron pruebas unitarias con Karma + Jasmine para:
+- Servicios (PokemonService)
+- Componentes (PokemonPageComponent, PokemonCardComponent, etc.)
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Ejecutar con:
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+## 📡 Conexión con Backend
 
-For end-to-end (e2e) testing, run:
+La app consume un backend PHP desplegado por separado, y espera una API REST en:
 
 ```bash
-ng e2e
+GET http://localhost:8000/pokemon/{id}
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 👤 Autor
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**Alejandro Sanmiguel**
+Desarrollado por Alejandro Sanmiguel  
+📧 alejandrosanmiguel0222@gmail.com
